@@ -66,4 +66,4 @@ for color in found_colors:
 	coloroutput += escape_character + "[48;2;" + str(rgb_from_hsb[0]) + ";" + str(rgb_from_hsb[1]) + ";" + str(rgb_from_hsb[2]) + "m   " + escape_character + "[0m"
 print(coloroutput)
 for color in final_rgb_colors:
-	print("#" + hex(color[0])[2:])
+	print("#" + '%02x%02x%02x' % color)
