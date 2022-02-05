@@ -5,7 +5,7 @@
  - [x] Finish algorithm
  - [ ] Set any output
  - [ ] Get images from Internet / Specify image at command line
- - [ ] Return output in usable format
+ - [x] Return output in usable format
 
 ## Credits
 
