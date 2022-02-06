@@ -2,7 +2,7 @@
 
 from PIL import Image
 
-import colorsys, random
+import colorsys, random, sys
 
 input_location = "wallpaper.png"
 retries = 2048
