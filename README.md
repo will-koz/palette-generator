@@ -1,10 +1,12 @@
 # Palette Generator
 
+This will eventually be used to generate portions of a .Xresources file
+
 ## TODO
 
  - [x] Finish algorithm
  - [ ] Set any output
- - [ ] Get images from Internet / Specify image at command line
+ - [x] Get images from Internet / Specify image at command line
  - [x] Return output in usable format
 
 ## Credits

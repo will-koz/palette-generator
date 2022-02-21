@@ -2,9 +2,10 @@
 
 from PIL import Image
 
-import colorsys, random, sys
+import colorsys, os, random, sys, urllib.request
 
 input_location = "wallpaper.png"
+input_tmp = "tmp.png"
 retries = 2048
 escape_character = "\033"
 
@@ -24,9 +25,16 @@ def get_random_pixel_from_image (image):
 	pointy = random.randint(0, image.size[1] - 1) # Get random point between 0 and height
 	return image.getpixel((pointx, pointy))
 
+def get_image (location):
+	try:
+		return Image.open(location) # try to load image from local storage
+	except FileNotFoundError:
+		urllib.request.urlretrieve(input_location, input_tmp) # Put it into local storage
+		return Image.open(input_tmp) # and then load it from local storage
+
 #----------------------------------------------------------------------------------------------------
 
-input_image = Image.open(input_location)
+input_image = get_image(input_location)
 input_image = input_image.convert("HSV")
 found_colors = []
 
@@ -67,3 +75,8 @@ for color in found_colors:
 print(coloroutput)
 for color in final_rgb_colors:
 	print("#" + '%02x%02x%02x' % color)
+
+try:
+	os.remove(input_tmp)
+except:
+	pass
