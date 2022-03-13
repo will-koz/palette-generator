@@ -8,6 +8,11 @@ input_location = "wallpaper.png"
 input_tmp = "tmp.png"
 retries = 2048
 escape_character = "\033"
+output = ""
+try:
+	output = sys.argv[1]
+except IndexError:
+	pass
 
 colors = [((0, 255), (0, 255), (0, 20)), # Black
 	((0, 30), (160, 255), (128, 255)), # Red
